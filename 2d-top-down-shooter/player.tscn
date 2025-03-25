@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bscmmrcayi81y"]
+
+[ext_resource type="Texture2D" uid="uid://c8knj80hpxcgp" path="res://assets/shooter.png" id="1_neh11"]
+[ext_resource type="Texture2D" uid="uid://bpyn1vwmmkcuc" path="res://assets/dead_body.png" id="2_ybnud"]
+[ext_resource type="Texture2D" uid="uid://ccijjno8uef24" path="res://assets/blood_splatter.png" id="3_s5pbr"]
+[ext_resource type="AudioStream" uid="uid://bg1pdqbs5h065" path="res://assets/death_noise1.wav" id="4_t7cmr"]
+[ext_resource type="AudioStream" uid="uid://c3ukg8710v481" path="res://assets/shotgun_shot1.wav" id="5_thgd6"]
+[ext_resource type="Texture2D" uid="uid://daggf3kpo813b" path="res://assets/muzzle_flash.png" id="6_ycqbj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2452m"]
+radius = 31.7805
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2452m")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Alive" type="Sprite2D" parent="Graphics"]
+position = Vector2(3, -14)
+texture = ExtResource("1_neh11")
+
+[node name="Dead" type="Sprite2D" parent="Graphics"]
+visible = false
+z_index = -1
+texture = ExtResource("2_ybnud")
+
+[node name="BloodSplatter" type="Sprite2D" parent="Graphics/Dead"]
+self_modulate = Color(1, 0.410551, 0.905195, 1)
+show_behind_parent = true
+position = Vector2(-6, 1)
+texture = ExtResource("3_s5pbr")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(3, 2)
+target_position = Vector2(0, -1000)
+collision_mask = 3
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t7cmr")
+bus = &"sfx"
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_thgd6")
+bus = &"sfx"
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+self_modulate = Color(0.447059, 0.737255, 0.678431, 0.796078)
+position = Vector2(5, -82)
+texture = ExtResource("6_ycqbj")
+
+[node name="Timer" type="Timer" parent="MuzzleFlash"]
+wait_time = 0.05
+one_shot = true
