@@ -124,3 +124,4 @@ text = "Restart"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="timeout" from="MuzzleFlash/Timer" to="MuzzleFlash" method="hide"]
+[connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Button" to="." method="restart"]
