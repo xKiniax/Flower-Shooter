@@ -37,7 +37,7 @@ func kill():
 	
 		
 func restart():
-	get_tree().reload_current_
+	get_tree().reload_current_scene()
 	
 func shoot():
 	$MuzzleFlash.show()

@@ -7,10 +7,13 @@ extends CharacterBody2D
 
 var dead = false
 
+
 func _physics_process(delta: float) -> void:
+	
 	if dead:
 		return
 		
+	print(player)
 	var dir_to_player = global_position.direction_to(player.global_position)
 	velocity = dir_to_player * move_speed
 	move_and_slide()
@@ -19,3 +22,13 @@ func _physics_process(delta: float) -> void:
 	
 	if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider() == player:
 		player.kill()
+
+func kill():
+	if dead:
+		return
+	dead = true
+	$DeathSound.play()
+	$Graphics/Dead.show()
+	$Graphics/Alive.hide()
+	$CollisionShape2D.disabled = true
+	z_index = -1

@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=6 format=3 uid="uid://dq80wiwos2tyd"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
+[ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
 size = Vector2(64, 64)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_7bg6f")
+zombie_scene = ExtResource("2_nob2e")
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.591104, 0.812415, 0.600828, 0.541176)
 z_index = -2
-position = Vector2(32, 32)
+position = Vector2(671, 358)
 scale = Vector2(39.9688, 24.875)
 texture = ExtResource("1_yls8s")
 
