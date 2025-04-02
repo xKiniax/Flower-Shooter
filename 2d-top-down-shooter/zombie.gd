@@ -4,8 +4,13 @@ extends CharacterBody2D
 
 @export var move_speed = 100
 @onready var player : CharacterBody2D = get_tree().get_first_node_in_group("player")
+@onready var alive_zombie_pics = [preload("res://assets/sunflower.png"), preload("res://assets/dead_body.png")]
+
 
 var dead = false
+
+func _ready() -> void:
+	$Graphics/Alive.texture = var alive_zombie_pics.pick_random()
 
 
 func _physics_process(delta: float) -> void:
@@ -33,3 +38,4 @@ func kill():
 	$Graphics/Alive.hide()
 	$CollisionShape2D.disabled = true
 	z_index = -1
+	get_parent().zombie_killed()
