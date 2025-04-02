@@ -18,7 +18,8 @@ func _physics_process(delta: float) -> void:
 	velocity = dir_to_player * move_speed
 	move_and_slide()
 	
-	global_rotation - dir_to_player.angle() + PI/2.0
+	look_at(player.global_position)
+	#global_rotation - dir_to_player.angle() + PI/2.0
 	
 	if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider() == player:
 		player.kill()

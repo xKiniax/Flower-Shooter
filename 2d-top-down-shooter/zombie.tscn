@@ -18,6 +18,7 @@ script = ExtResource("1_i0ife")
 shape = SubResource("CircleShape2D_ufcln")
 
 [node name="Graphics" type="Node2D" parent="."]
+rotation = 1.57079
 
 [node name="Alive" type="Sprite2D" parent="Graphics"]
 position = Vector2(6, -30)
@@ -35,6 +36,7 @@ position = Vector2(-6, 1)
 texture = ExtResource("4_jou3f")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = 1.57079
 target_position = Vector2(0, -70)
 collision_mask = 3
 
