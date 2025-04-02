@@ -11,3 +11,5 @@ func spawn_zombie():
 func _ready() -> void:
 	for i in 10:
 		spawn_zombie()
+		
+		

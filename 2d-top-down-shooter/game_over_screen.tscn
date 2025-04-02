@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl6bptvlcg8uh"]
+
+[ext_resource type="FontFile" uid="uid://d1mnap7cgo1i7" path="res://assets/ADELIA.otf" id="1_fkm04"]
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_mtqds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2ymb"]
+bg_color = Color(0.616834, 0.790763, 0.630441, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_mtqds")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1112.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t2ymb")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_font_sizes/font_size = 70
+text = "Game Over
+"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Rows/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="restart" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_font_sizes/font_size = 35
+text = "  Restart  "
+
+[node name="quit" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_font_sizes/font_size = 35
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
