@@ -10,7 +10,7 @@ extends CharacterBody2D
 var dead = false
 
 func _ready() -> void:
-	$Graphics/Alive.texture = var alive_zombie_pics.pick_random()
+	$Graphics/Alive.texture = alive_zombie_pics.pick_random()
 
 
 func _physics_process(delta: float) -> void:

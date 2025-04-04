@@ -23,7 +23,8 @@ texture = ExtResource("1_yls8s")
 
 [node name="Block" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(254, 154)
+position = Vector2(669, -598)
+scale = Vector2(50.3738, -4.74344)
 texture = ExtResource("1_yls8s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
@@ -33,7 +34,8 @@ shape = SubResource("RectangleShape2D_c2k8o")
 
 [node name="Block2" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(386, 295)
+position = Vector2(-787, 354)
+scale = Vector2(5.56, 25.36)
 texture = ExtResource("1_yls8s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block2"]
@@ -43,7 +45,8 @@ shape = SubResource("RectangleShape2D_c2k8o")
 
 [node name="Block3" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(610, 125)
+position = Vector2(2140, 361)
+scale = Vector2(5.56, 25.64)
 texture = ExtResource("1_yls8s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block3"]
@@ -53,7 +56,8 @@ shape = SubResource("RectangleShape2D_c2k8o")
 
 [node name="Block4" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(815, 382)
+position = Vector2(651, 1301)
+scale = Vector2(53.52, 4.32)
 texture = ExtResource("1_yls8s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block4"]
