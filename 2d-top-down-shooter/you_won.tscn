@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl6bptvlcg8uh"]
+[gd_scene load_steps=4 format=3 uid="uid://swwigwuu5q16"]
 
-[ext_resource type="FontFile" uid="uid://d1mnap7cgo1i7" path="res://assets/ADELIA.otf" id="1_fkm04"]
-[ext_resource type="Script" path="res://game_over_screen.gd" id="1_mtqds"]
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_ey6gg"]
+[ext_resource type="FontFile" uid="uid://d1mnap7cgo1i7" path="res://assets/ADELIA.otf" id="2_jvbkh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2ymb"]
 bg_color = Color(0.616834, 0.790763, 0.630441, 1)
@@ -10,8 +10,8 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
-[node name="GameOverScreen" type="CanvasLayer"]
-script = ExtResource("1_mtqds")
+[node name="You won" type="CanvasLayer"]
+script = ExtResource("1_ey6gg")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 40.0
@@ -33,9 +33,9 @@ theme_override_constants/separation = 90
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_fonts/font = ExtResource("2_jvbkh")
 theme_override_font_sizes/font_size = 70
-text = "You lost
+text = "You won
 "
 horizontal_alignment = 1
 
@@ -48,13 +48,13 @@ theme_override_constants/separation = 40
 
 [node name="restart" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_fonts/font = ExtResource("2_jvbkh")
 theme_override_font_sizes/font_size = 35
 text = "  Restart  "
 
 [node name="quit" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fkm04")
+theme_override_fonts/font = ExtResource("2_jvbkh")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 

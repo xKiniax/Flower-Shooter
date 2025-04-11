@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iqwpha04vlke"
-path="res://.godot/imported/zombie.png-4cd2dbe37cd76864df3927b059d3a180.ctex"
+uid="uid://d0yv7duo4ta12"
+path="res://.godot/imported/pink sakura flower.png-b87af21e76885f1ce01c3481e345d9e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zombie.png"
-dest_files=["res://.godot/imported/zombie.png-4cd2dbe37cd76864df3927b059d3a180.ctex"]
+source_file="res://assets/pink sakura flower.png"
+dest_files=["res://.godot/imported/pink sakura flower.png-b87af21e76885f1ce01c3481e345d9e5.ctex"]
 
 [params]
 

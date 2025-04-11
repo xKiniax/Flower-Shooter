@@ -16,4 +16,4 @@ func _ready() -> void:
 func zombie_killed():
 	amount_of_zombies -= 1
 	if amount_of_zombies == 0:
-		get_tree().change_scene_to_file("res://game_over_screen.tscn")
+		get_tree().change_scene_to_file("res://you_won.tscn")
