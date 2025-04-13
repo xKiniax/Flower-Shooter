@@ -32,8 +32,8 @@ func kill():
 	$DeathSound.play()
 	$Graphics/Dead.show()
 	$Graphics/Alive.hide()
-	#$CanvasLayer/DeathScreen.show()
-	get_tree().change_scene_to_file("res://game_over_screen.tscn")
+	$CanvasLayer/DeathScreen.show()
+	#get_tree().change_scene_to_file("res://game_over_screen.tscn")
 	z_index = -1
 	
 		
