@@ -56,7 +56,7 @@ text = "  Restart  "
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jvbkh")
 theme_override_font_sizes/font_size = 35
-text = "Quit"
+text = " Exit to menu "
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

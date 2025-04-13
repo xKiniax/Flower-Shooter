@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=7 format=3 uid="uid://dq80wiwos2tyd"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
 [ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
+[ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
-size = Vector2(64, 64)
+size = Vector2(71.3885, 68.8056)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_7bg6f")
@@ -17,53 +18,61 @@ zombie_scene = ExtResource("2_nob2e")
 [node name="Floor" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.591104, 0.812415, 0.600828, 0.541176)
 z_index = -2
-position = Vector2(671, 358)
+position = Vector2(658, 361)
 scale = Vector2(39.9688, 24.875)
 texture = ExtResource("1_yls8s")
 
-[node name="Block" type="Sprite2D" parent="Environment"]
+[node name="top" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
 position = Vector2(669, -598)
 scale = Vector2(50.3738, -4.74344)
 texture = ExtResource("1_yls8s")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/top"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/top/StaticBody2D"]
+position = Vector2(-0.158813, -3.16226)
 shape = SubResource("RectangleShape2D_c2k8o")
+debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
-[node name="Block2" type="Sprite2D" parent="Environment"]
+[node name="left" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
 position = Vector2(-787, 354)
 scale = Vector2(5.56, 25.36)
 texture = ExtResource("1_yls8s")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/left"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/left/StaticBody2D"]
 shape = SubResource("RectangleShape2D_c2k8o")
+debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
-[node name="Block3" type="Sprite2D" parent="Environment"]
+[node name="right" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
 position = Vector2(2140, 361)
 scale = Vector2(5.56, 25.64)
 texture = ExtResource("1_yls8s")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/right"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block3/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/right/StaticBody2D"]
+position = Vector2(-2.06113, 0)
 shape = SubResource("RectangleShape2D_c2k8o")
+debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
-[node name="Block4" type="Sprite2D" parent="Environment"]
+[node name="bottom" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
 position = Vector2(651, 1301)
 scale = Vector2(53.52, 4.32)
 texture = ExtResource("1_yls8s")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block4"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/bottom"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block4/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/bottom/StaticBody2D"]
+position = Vector2(0, -2.40277)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_c2k8o")
+debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
 [node name="Block5" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
@@ -125,5 +134,281 @@ texture = ExtResource("1_yls8s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block10/StaticBody2D"]
 shape = SubResource("RectangleShape2D_c2k8o")
 
+[node name="hedges wall top" type="Node2D" parent="Environment"]
+
+[node name="Hedge" type="Sprite2D" parent="Environment/hedges wall top"]
+z_index = 1
+position = Vector2(-505, -557)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge2" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(-310, -553)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge3" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(-143, -546)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge4" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(49, -553)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge5" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(231, -544)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge6" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(410, -550)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge7" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(609, -543)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge8" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(776, -536)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge9" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(968, -543)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge10" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(1150, -534)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge11" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(1277, -535)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge12" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(1456, -541)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge13" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(1655, -534)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge14" type="Sprite2D" parent="Environment/hedges wall top"]
+position = Vector2(1822, -527)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="hedges wall bottom" type="Node2D" parent="Environment"]
+position = Vector2(16, 1801)
+
+[node name="Hedge" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(-509, -557)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge2" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(-310, -553)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge3" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(-143, -546)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge4" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(49, -553)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge5" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(231, -544)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge6" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(410, -550)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge7" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(609, -543)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge8" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(776, -536)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge9" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(968, -543)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge10" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(1150, -534)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge11" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(1277, -535)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge12" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(1456, -541)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge13" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(1655, -534)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge14" type="Sprite2D" parent="Environment/hedges wall bottom"]
+position = Vector2(1822, -527)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge15" type="Sprite2D" parent="Environment/hedges wall bottom"]
+z_index = 1
+position = Vector2(-685, -552)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="hedges wall side left" type="Node2D" parent="Environment"]
+position = Vector2(-151, 1415)
+rotation = -1.57079
+
+[node name="Hedge5" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(231, -544)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge6" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(410, -550)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge7" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(609, -543)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge8" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(776, -536)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge9" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(968, -543)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge10" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1150, -534)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge11" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1277, -535)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge12" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1456, -541)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge13" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1655, -534)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge14" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1822, -527)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge15" type="Sprite2D" parent="Environment/hedges wall side left"]
+position = Vector2(1971, -506.004)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="hedges wall side right" type="Node2D" parent="Environment"]
+position = Vector2(2523, 1458)
+rotation = -1.57079
+
+[node name="Hedge5" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(231, -544)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge6" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(410, -550)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge7" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(609, -543)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge8" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(776, -536)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge9" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(968, -543)
+scale = Vector2(1.76953, 1.74023)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge10" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1150, -534)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge11" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1277, -535)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge12" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1456, -541)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge13" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1655, -534)
+scale = Vector2(1.75195, 1.75195)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge14" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1822, -527)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
+[node name="Hedge15" type="Sprite2D" parent="Environment/hedges wall side right"]
+position = Vector2(1979, -527.004)
+scale = Vector2(1.71094, 1.71094)
+texture = ExtResource("4_3mgyn")
+
 [node name="Player" parent="." instance=ExtResource("2_xsbca")]
 position = Vector2(637, 362)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 180.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
