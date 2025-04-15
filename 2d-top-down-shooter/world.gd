@@ -2,7 +2,7 @@ extends Node2D
 
 @export var zombie_scene : PackedScene
 #var zombies_killed 
-var zombie_number = 0
+
 
 func spawn_zombie():
 	var pos = Vector2(randi_range(0, 1920), randi_range(0, 1080))
@@ -14,6 +14,14 @@ func _ready() -> void:
 	for i in 10:
 		spawn_zombie()
 		
+func _process(delta):
+	update_score()
+	
+func update_score():
+	Score.previous_score = Score.current_score
+	if Score.current_score > Score.high_score:
+		Score.high_score = Score.current_score
+	Score.current_score = 0
 
 
 func _on_timer_timeout() -> void:

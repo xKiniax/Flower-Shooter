@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var player : CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var alive_zombie_pics = [preload("res://assets/flower weed 1.png"), preload("res://assets/flower weed 2.png"), preload("res://assets/flower weed 3.png")]
 @onready var dead_zombie_pics = [preload("res://assets/sunflower.png"), preload("res://assets/dead_body.png"), preload("res://assets/Blue flowers.png"), preload("res://assets/pink sakura flower.png")]
-
+var points_for_kill = 10
 
 var dead = false
 
@@ -41,4 +41,4 @@ func kill():
 	$CollisionShape2D.disabled = true
 	z_index = -1
 	#get_parent().zombie_killed()
-	get_parent().zombie_number += 1
+	Score.current_score += points_for_kill #Score is the singleton autoload class

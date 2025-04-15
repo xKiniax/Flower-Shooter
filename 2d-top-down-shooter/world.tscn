@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
 [ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
-[ext_resource type="FontFile" uid="uid://d1mnap7cgo1i7" path="res://assets/ADELIA.otf" id="6_amqxe"]
+[ext_resource type="Script" path="res://current_score_label.gd" id="7_k2tot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
 size = Vector2(71.3885, 68.8056)
@@ -17,7 +17,7 @@ zombie_scene = ExtResource("2_nob2e")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.591104, 0.812415, 0.600828, 0.541176)
+self_modulate = Color(0.313726, 0.776471, 0.309804, 0.490196)
 z_index = -2
 position = Vector2(653.5, 362.5)
 scale = Vector2(47.5156, 32.5156)
@@ -408,7 +408,7 @@ texture = ExtResource("4_3mgyn")
 position = Vector2(637, 362)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 25.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -426,11 +426,11 @@ size_flags_vertical = 0
 
 [node name="Flowers Flourished" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_amqxe")
 theme_override_font_sizes/font_size = 31
-text = "Flowers Flourished: 0"
+text = "Flowers Flourished: 99"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("7_k2tot")
 
 [node name="Zombie spawning" type="Timer" parent="."]
 wait_time = 15.0
