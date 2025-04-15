@@ -40,4 +40,5 @@ func kill():
 	$Graphics/Alive.hide()
 	$CollisionShape2D.disabled = true
 	z_index = -1
-	get_parent().zombie_killed()
+	#get_parent().zombie_killed()
+	get_parent().zombie_number += 1

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8knj80hpxcgp" path="res://assets/shooter.png" id="1_neh11"]
 [ext_resource type="Texture2D" uid="uid://bpyn1vwmmkcuc" path="res://assets/dead_body.png" id="2_ybnud"]
 [ext_resource type="AudioStream" uid="uid://bg1pdqbs5h065" path="res://assets/death_noise1.wav" id="4_t7cmr"]
-[ext_resource type="AudioStream" uid="uid://c3ukg8710v481" path="res://assets/shotgun_shot1.wav" id="5_thgd6"]
+[ext_resource type="AudioStream" uid="uid://b5a61ja7e1tx6" path="res://assets/spray-bottle-sfx.wav" id="5_l4dng"]
 [ext_resource type="Texture2D" uid="uid://daggf3kpo813b" path="res://assets/muzzle_flash.png" id="6_ycqbj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2452m"]
@@ -39,7 +39,9 @@ stream = ExtResource("4_t7cmr")
 bus = &"sfx"
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_thgd6")
+stream = ExtResource("5_l4dng")
+volume_db = -0.776
+pitch_scale = 1.19
 bus = &"sfx"
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]

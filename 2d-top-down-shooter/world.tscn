@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=8 format=3 uid="uid://dq80wiwos2tyd"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
 [ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
 [ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
+[ext_resource type="FontFile" uid="uid://d1mnap7cgo1i7" path="res://assets/ADELIA.otf" id="6_amqxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
 size = Vector2(71.3885, 68.8056)
@@ -18,12 +19,12 @@ zombie_scene = ExtResource("2_nob2e")
 [node name="Floor" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.591104, 0.812415, 0.600828, 0.541176)
 z_index = -2
-position = Vector2(658, 361)
-scale = Vector2(39.9688, 24.875)
+position = Vector2(653.5, 362.5)
+scale = Vector2(47.5156, 32.5156)
 texture = ExtResource("1_yls8s")
 
 [node name="top" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
+self_modulate = Color(0.101961, 0.239216, 0.141176, 0)
 position = Vector2(669, -598)
 scale = Vector2(50.3738, -4.74344)
 texture = ExtResource("1_yls8s")
@@ -36,7 +37,7 @@ shape = SubResource("RectangleShape2D_c2k8o")
 debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
 [node name="left" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
+self_modulate = Color(0.101961, 0.239216, 0.141176, 0)
 position = Vector2(-787, 354)
 scale = Vector2(5.56, 25.36)
 texture = ExtResource("1_yls8s")
@@ -48,7 +49,7 @@ shape = SubResource("RectangleShape2D_c2k8o")
 debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
 [node name="right" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
+self_modulate = Color(0.101961, 0.239216, 0.141176, 0)
 position = Vector2(2140, 361)
 scale = Vector2(5.56, 25.64)
 texture = ExtResource("1_yls8s")
@@ -61,7 +62,7 @@ shape = SubResource("RectangleShape2D_c2k8o")
 debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
 [node name="bottom" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
+self_modulate = Color(0.101961, 0.239216, 0.141176, 0)
 position = Vector2(651, 1301)
 scale = Vector2(53.52, 4.32)
 texture = ExtResource("1_yls8s")
@@ -70,7 +71,6 @@ texture = ExtResource("1_yls8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/bottom/StaticBody2D"]
 position = Vector2(0, -2.40277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_c2k8o")
 debug_color = Color(0.490196, 0.666667, 0.494118, 1)
 
@@ -411,4 +411,31 @@ position = Vector2(637, 362)
 wait_time = 180.0
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Flowers Flourished" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_amqxe")
+theme_override_font_sizes/font_size = 31
+text = "Flowers Flourished: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zombie spawning" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Zombie spawning" to="." method="_on_zombie_spawning_timeout"]
