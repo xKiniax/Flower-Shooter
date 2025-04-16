@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://previouscore.gd" id="4_0vhxs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2ymb"]
-bg_color = Color(0.616834, 0.790763, 0.630441, 1)
+bg_color = Color(0.294118, 0.509804, 0.219608, 0.87451)
 corner_radius_top_left = 40
 corner_radius_top_right = 40
 corner_radius_bottom_right = 40

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=9 format=3 uid="uid://dq80wiwos2tyd"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
 [ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
 [ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
+[ext_resource type="Texture2D" uid="uid://do3s4w7hjsp0a" path="res://assets/rock.png" id="5_al66s"]
 [ext_resource type="Script" path="res://current_score_label.gd" id="7_k2tot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
@@ -403,6 +404,16 @@ texture = ExtResource("4_3mgyn")
 position = Vector2(1979, -527.004)
 scale = Vector2(1.71094, 1.71094)
 texture = ExtResource("4_3mgyn")
+
+[node name="Rock2" type="Sprite2D" parent="Environment"]
+position = Vector2(1052, 281)
+scale = Vector2(0.596808, 0.472787)
+texture = ExtResource("5_al66s")
+
+[node name="Rock" type="Sprite2D" parent="Environment"]
+position = Vector2(880, 120)
+scale = Vector2(0.535156, 0.527344)
+texture = ExtResource("5_al66s")
 
 [node name="Player" parent="." instance=ExtResource("2_xsbca")]
 position = Vector2(637, 362)
