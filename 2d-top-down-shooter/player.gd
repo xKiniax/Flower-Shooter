@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 		
-func _physics_process(delta: float) -> void:
+func _physics_process(float):
 	if dead:
 		return
 	var move_dir = Input.get_vector("mover_left","move_right", "move_up", "move_down")
