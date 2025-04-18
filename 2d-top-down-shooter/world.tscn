@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=10 format=3 uid="uid://dq80wiwos2tyd"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
 [ext_resource type="Texture2D" uid="uid://do3s4w7hjsp0a" path="res://assets/rock.png" id="5_al66s"]
 [ext_resource type="Script" path="res://current_score_label.gd" id="7_k2tot"]
+[ext_resource type="AudioStream" uid="uid://biv0d5pmut1vl" path="res://639958__m-murray__twlight-piano-loop.wav" id="7_si4sj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
 size = Vector2(71.3885, 68.8056)
@@ -421,6 +422,11 @@ position = Vector2(637, 362)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 25.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Timer"]
+stream = ExtResource("7_si4sj")
+volume_db = -27.171
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

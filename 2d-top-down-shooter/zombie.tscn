@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://zombie.gd" id="1_i0ife"]
 [ext_resource type="Texture2D" uid="uid://djtsr4xeidiwi" path="res://assets/flower weed 3.png" id="2_w23d6"]
 [ext_resource type="Texture2D" uid="uid://coruatybjjiom" path="res://assets/sunflower.png" id="3_16c0f"]
-[ext_resource type="AudioStream" uid="uid://fmcl3c3au144" path="res://assets/monster_die.wav" id="5_2v15k"]
+[ext_resource type="AudioStream" uid="uid://c2sg6tan1drfn" path="res://assets/Fairy magic wand sound.wav" id="4_y18ln"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ufcln"]
 radius = 26.0192
@@ -35,5 +35,6 @@ target_position = Vector2(0, -70)
 collision_mask = 3
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_2v15k")
+stream = ExtResource("4_y18ln")
+volume_db = -7.924
 bus = &"sfx"
