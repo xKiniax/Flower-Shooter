@@ -1,16 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq80wiwos2tyd"]
+[gd_scene load_steps=20 format=3 uid="uid://dq80wiwos2tyd"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7bg6f"]
 [ext_resource type="Texture2D" uid="uid://i4cdmup3oaaj" path="res://assets/white_sq.png" id="1_yls8s"]
 [ext_resource type="PackedScene" uid="uid://b1yt5ylbppsm0" path="res://zombie.tscn" id="2_nob2e"]
 [ext_resource type="PackedScene" uid="uid://bscmmrcayi81y" path="res://player.tscn" id="2_xsbca"]
+[ext_resource type="Texture2D" uid="uid://gd17blc7ns1j" path="res://assets/Grass 2.png" id="3_x5xok"]
 [ext_resource type="Texture2D" uid="uid://bjpj606ape4cf" path="res://assets/Hedge.png" id="4_3mgyn"]
 [ext_resource type="Texture2D" uid="uid://do3s4w7hjsp0a" path="res://assets/rock.png" id="5_al66s"]
+[ext_resource type="Texture2D" uid="uid://dn4ixahvnt3m5" path="res://assets/water lake.png" id="7_h0nwp"]
 [ext_resource type="Script" path="res://current_score_label.gd" id="7_k2tot"]
 [ext_resource type="AudioStream" uid="uid://biv0d5pmut1vl" path="res://639958__m-murray__twlight-piano-loop.wav" id="7_si4sj"]
+[ext_resource type="Texture2D" uid="uid://2jddtra8cv4e" path="res://assets/Rock 2.png" id="11_bc0uy"]
+[ext_resource type="Texture2D" uid="uid://dpa4apr2d7c3s" path="res://assets/Flower wheelbarrow.png" id="12_o340x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2k8o"]
 size = Vector2(71.3885, 68.8056)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6jpo"]
+radius = 57.943
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4cwv"]
+radius = 58.5912
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ih74"]
+size = Vector2(114.847, 126.626)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80ugi"]
+radius = 48.8365
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6pfh"]
+radius = 33.0
+height = 114.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rdvl"]
+radius = 33.4545
+height = 104.727
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_7bg6f")
@@ -19,11 +43,82 @@ zombie_scene = ExtResource("2_nob2e")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.313726, 0.776471, 0.309804, 0.490196)
 z_index = -2
-position = Vector2(653.5, 362.5)
-scale = Vector2(47.5156, 32.5156)
-texture = ExtResource("1_yls8s")
+position = Vector2(-423.5, 900.5)
+scale = Vector2(8.05469, 7.42969)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor"]
+z_index = -2
+position = Vector2(119.637, -4.8731)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor"]
+z_index = -2
+position = Vector2(119.637, -4.8731)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(119.637, -4.8731)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(-425.369, -120.991)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor2" type="Sprite2D" parent="Environment/Floor/Floor"]
+z_index = -2
+position = Vector2(-19.1362, -98.8691)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2"]
+z_index = -2
+position = Vector2(119.637, -4.8731)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor"]
+z_index = -2
+position = Vector2(119.637, -4.8731)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor/Floor"]
+z_index = -2
+position = Vector2(-54.4219, -109.348)
+scale = Vector2(1.00058, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(-357.377, 8.6093)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(121.098, 0.222985)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor/Floor/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(113.742, 3.39565)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Floor/Floor/Floor2/Floor/Floor/Floor/Floor/Floor/Floor"]
+z_index = -2
+position = Vector2(113.742, 3.39565)
+scale = Vector2(0.902699, 0.91931)
+texture = ExtResource("3_x5xok")
 
 [node name="top" type="Sprite2D" parent="Environment"]
 self_modulate = Color(0.101961, 0.239216, 0.141176, 0)
@@ -75,66 +170,6 @@ texture = ExtResource("1_yls8s")
 position = Vector2(0, -2.40277)
 shape = SubResource("RectangleShape2D_c2k8o")
 debug_color = Color(0.490196, 0.666667, 0.494118, 1)
-
-[node name="Block5" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(559, 457)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block5/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
-
-[node name="Block6" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(276, 497)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block6/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
-
-[node name="Block7" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(103, 356)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block7"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block7/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
-
-[node name="Block8" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(878, 123)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block8/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
-
-[node name="Block9" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(1048, 282)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block9/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
-
-[node name="Block10" type="Sprite2D" parent="Environment"]
-self_modulate = Color(0.101073, 0.239553, 0.142297, 1)
-position = Vector2(969, 550)
-texture = ExtResource("1_yls8s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block10"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block10/StaticBody2D"]
-shape = SubResource("RectangleShape2D_c2k8o")
 
 [node name="hedges wall top" type="Node2D" parent="Environment"]
 
@@ -411,10 +446,152 @@ position = Vector2(1052, 281)
 scale = Vector2(0.596808, 0.472787)
 texture = ExtResource("5_al66s")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock2/StaticBody2D"]
+shape = SubResource("CircleShape2D_i6jpo")
+
 [node name="Rock" type="Sprite2D" parent="Environment"]
-position = Vector2(880, 120)
+position = Vector2(986, 124)
 scale = Vector2(0.535156, 0.527344)
 texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock/StaticBody2D"]
+shape = SubResource("CircleShape2D_j4cwv")
+
+[node name="WaterLake" type="Sprite2D" parent="Environment"]
+position = Vector2(1488, 756)
+scale = Vector2(5.09375, 5.09375)
+texture = ExtResource("7_h0nwp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/WaterLake"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WaterLake/StaticBody2D"]
+position = Vector2(1.66876, 2.84663)
+shape = SubResource("RectangleShape2D_2ih74")
+
+[node name="WaterLake2" type="Sprite2D" parent="Environment"]
+position = Vector2(-287, -114)
+scale = Vector2(5.09375, 5.09375)
+texture = ExtResource("7_h0nwp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/WaterLake2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WaterLake2/StaticBody2D"]
+position = Vector2(1.66876, 2.84663)
+shape = SubResource("RectangleShape2D_2ih74")
+
+[node name="Rock3" type="Sprite2D" parent="Environment"]
+position = Vector2(1084, 1043)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock3/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock4" type="Sprite2D" parent="Environment"]
+position = Vector2(17, 167)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock4/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock5" type="Sprite2D" parent="Environment"]
+position = Vector2(-542, 1024)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock5/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock6" type="Sprite2D" parent="Environment"]
+position = Vector2(-272, 875)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock6/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock7" type="Sprite2D" parent="Environment"]
+position = Vector2(192, 799)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock7/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock8" type="Sprite2D" parent="Environment"]
+position = Vector2(240, 472)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock8/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock9" type="Sprite2D" parent="Environment"]
+position = Vector2(719, 891)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock9/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock10" type="Sprite2D" parent="Environment"]
+position = Vector2(411, -17)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock10/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock11" type="Sprite2D" parent="Environment"]
+position = Vector2(1496, 259)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock11/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock12" type="Sprite2D" parent="Environment"]
+position = Vector2(1448, -143)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock12/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
+
+[node name="Rock13" type="Sprite2D" parent="Environment"]
+position = Vector2(612, -293)
+texture = ExtResource("5_al66s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Rock13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rock13/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_80ugi")
 
 [node name="Player" parent="." instance=ExtResource("2_xsbca")]
 position = Vector2(637, 362)
@@ -429,6 +606,7 @@ volume_db = -27.171
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -453,6 +631,98 @@ script = ExtResource("7_k2tot")
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(987, 1082)
+texture = ExtResource("11_bc0uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rock2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_q6pfh")
+
+[node name="Rock3" type="Sprite2D" parent="."]
+position = Vector2(63, 104)
+texture = ExtResource("11_bc0uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rock3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock3/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_q6pfh")
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(-10, 237)
+texture = ExtResource("11_bc0uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rock4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock4/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_q6pfh")
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(-550, 1107)
+texture = ExtResource("11_bc0uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rock5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock5/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_q6pfh")
+
+[node name="FlowerWheelbarrow" type="Sprite2D" parent="."]
+position = Vector2(97, 1074)
+rotation = 1.57079
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("12_o340x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FlowerWheelbarrow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerWheelbarrow/StaticBody2D"]
+position = Vector2(-7.9155e-05, -4.36361)
+shape = SubResource("CapsuleShape2D_8rdvl")
+
+[node name="FlowerWheelbarrow2" type="Sprite2D" parent="."]
+position = Vector2(-232, 292)
+rotation = 1.57079
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("12_o340x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FlowerWheelbarrow2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerWheelbarrow2/StaticBody2D"]
+position = Vector2(-7.9155e-05, -4.36361)
+shape = SubResource("CapsuleShape2D_8rdvl")
+
+[node name="FlowerWheelbarrow3" type="Sprite2D" parent="."]
+position = Vector2(962, -364)
+rotation = -1.57079
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("12_o340x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FlowerWheelbarrow3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerWheelbarrow3/StaticBody2D"]
+position = Vector2(-7.9155e-05, -4.36361)
+shape = SubResource("CapsuleShape2D_8rdvl")
+
+[node name="FlowerWheelbarrow4" type="Sprite2D" parent="."]
+position = Vector2(1810, 217)
+rotation = 3.14159
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("12_o340x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FlowerWheelbarrow4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerWheelbarrow4/StaticBody2D"]
+position = Vector2(-7.9155e-05, -4.36361)
+shape = SubResource("CapsuleShape2D_8rdvl")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Zombie spawning" to="." method="_on_zombie_spawning_timeout"]
