@@ -11,6 +11,7 @@ func spawn_zombie():
 	zombie.global_position = pos
 
 func _ready() -> void:
+	Score.current_score = 0
 	for i in 10:
 		spawn_zombie()
 		
@@ -21,7 +22,7 @@ func update_score():
 	Score.previous_score = Score.current_score
 	if Score.current_score > Score.high_score:
 		Score.high_score = Score.current_score
-	Score.current_score = 0
+	
 
 
 func _on_timer_timeout() -> void:
